@@ -1,0 +1,17 @@
+DROP DATABASE quiz;
+CREATE DATABASE quiz;
+USE quiz;
+CREATE TABLE student(id INT,NAME VARCHAR(45),gender VARCHAR(30),age INT ,chinese DOUBLE , math DOUBLE, english DOUBLE);
+INSERT INTO student VALUES(1,'zhangSan','man',13,90,61.25,40);
+INSERT INTO student VALUES(2,'liSi','woman',13,92,71.50,48);
+INSERT INTO student VALUES(2,'liSi','woman',13,92,71.50,48);
+INSERT INTO student VALUES(3,'wangWu','man',14,60,66.50,57);
+INSERT INTO student VALUES(4,'zhaoLiu','man',14,59,0.00,32);
+INSERT INTO student VALUES(5,'zhouQi','woman',13,90,85.00,80);
+SELECT * FROM student WHERE gender='woman' AND ((chinese+math+english)/3)>80 OR gender='man' AND ((chinese+math+english)/3)>60; 
+SELECT AVG(age) FROM student;
+ALTER TABLE student MODIFY NAME VARCHAR(50);
+DELETE FROM student WHERE ((math+chinese+english)/3)<60;
+ALTER TABLE student DROP age;
+ALTER TABLE student RENAME hw_stu;
+ALTER TABLE hw_stu ADD(age INT);
