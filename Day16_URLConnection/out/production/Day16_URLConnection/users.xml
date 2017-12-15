@@ -9,8 +9,11 @@
   </user>  
   <user user="1852545@qq.com"> 
     <password>FGDlove8888</password> 
+  </user>
+  <user user="admin@sina.com"> 
+    <password>Root8888</password> 
   </user>  
   <user user="18162377747">
-    <password>Dfg29561544</password>
+    <password>Root8888</password>
   </user>
 </RegisterInfo>

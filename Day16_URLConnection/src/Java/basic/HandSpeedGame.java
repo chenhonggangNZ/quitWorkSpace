@@ -44,7 +44,7 @@ public class HandSpeedGame {
         }
     }
 
-    private static boolean submit(String score,String user) throws IOException {
+    private static StringBuffer submit(String score, String user) throws IOException {
         int sublit = 12000;
         String number = null;
         if (score.contains("100%")){
@@ -61,7 +61,7 @@ public class HandSpeedGame {
                 }
             }
             sublit = Integer.parseInt(number);
-            String urlin = "http://192.168.20.221:8080/day16/insert?name="+user+"&score="+sublit;
+            String urlin = "http://192.168.20.221:8080/day16/insert?username="+user+"&score="+sublit;
             URL url = new URL(urlin);
             URLConnection urlC = url.openConnection();
             InputStream inputStream = urlC.getInputStream();
@@ -73,15 +73,18 @@ public class HandSpeedGame {
                 bytes[i] = (byte) num;
                 i++;
                 if (i == 1023){
-                    sb.append(bytes);
+                    sb.append(new String(bytes,"utf-8"));
+                    bytes = new byte[1024];
                     i = 0;
                 }
             }
+            try {
+                sb.append(new String(bytes, "utf-8"));
+            }catch(Exception e){}
             System.out.println(sb);
-            return true;
+            return sb;
         }
-
-        return false;
+        return null;
     }
 
 
@@ -116,7 +119,7 @@ public class HandSpeedGame {
         System.out.println(times+"毫秒");
         double num = 0;
         if (ins.equals(s)){
-            System.out.println("正确率100%");
+            num = 100;
         }else{
             try {
                 for (int i = 0; i < s.length(); i++) {
@@ -130,7 +133,8 @@ public class HandSpeedGame {
                 System.out.println("正确率" + ((int)num) + "%");
             }
         }
-        return times+((int)num) + "%";
+        System.out.println(times+""+((int)num) + "%");
+        return times+"&"+((int)num) + "%";
     }
 
     private static String moderation() {

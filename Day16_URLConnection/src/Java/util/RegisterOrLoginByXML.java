@@ -60,6 +60,8 @@ public class RegisterOrLoginByXML {
         }
     }
 
+
+
     private static void RegisterUserIsReasonable(String in) throws RegisterException {
 
        try{
@@ -67,32 +69,52 @@ public class RegisterOrLoginByXML {
                if (!Pattern.matches("[1][3,4,5,6,7,8]\\d{9}",in)){
                    throw new NumberFormatException();
                 }
+               isa(in);
+
            } else {
                if (!Pattern.matches("[1][3,4,5,6,7,8]\\d{9}",in)){
                    throw new TelphoneNumberNonexistentException();
+               } else {
+                   try {
+                       Document read = reader.read(FileAddress.FILE);
+                       List<Element> elements = read.getRootElement().elements();
+                       for (Element element : elements) {
+                           if(element.attribute("user").getValue().equals(in)){
+                               throw new UserAlreadyExistsException();
+                           }
+                       }
+                   } catch (DocumentException e1) {
+                       System.out.println(e1.getMessage());
+                   }
+                   throw new MailboxNonexistentException();
                }
+
            }
 
        } catch(java.lang.NumberFormatException e){
-           if (Pattern.matches("\\w*[@]\\w*[.][a-z,A-Z]{2,3}",in)){
-           } else if (Pattern.matches("\\w*[@]\\w*[.][a-z,A-Z]{2,4}[.][a-z,A-Z]{2,3}",in)){
-           } else {
-               try {
-                   Document read = reader.read(FileAddress.FILE);
-                   List<Element> elements = read.getRootElement().elements();
-                   for (Element element : elements) {
-                       if(element.attribute("user").getValue().equals(in)){
-                           throw new UserAlreadyExistsException();
-                       }
-                   }
-               } catch (DocumentException e1) {
-                   e1.printStackTrace();
-               }
-               throw new MailboxNonexistentException();
-           }
+           isa(in);
+       }
+
+
+    }
+
+    private static void isa(String in) throws UserAlreadyExistsException, MailboxNonexistentException {
+        if (Pattern.matches("\\w*[@]\\w*[.][a-z,A-Z]{2,3}",in)){
+        } else if (Pattern.matches("\\w*[@]\\w*[.][a-z,A-Z]{2,4}[.][a-z,A-Z]{2,3}",in)){
+        } else {
+            try {
+                Document read = reader.read(FileAddress.FILE);
+                List<Element> elements = read.getRootElement().elements();
+                for (Element element : elements) {
+                    if(element.attribute("user").getValue().equals(in)){
+                        throw new UserAlreadyExistsException();
+                    }
+                }
+            } catch (DocumentException e1) {
+                e1.printStackTrace();
+            }
+            throw new MailboxNonexistentException();
         }
-
-
     }
 
     public  static Element Login(String user, String password) throws LoginException {

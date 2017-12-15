@@ -1,17 +1,21 @@
 package Java.test;
 
+import Java.basic.CheckHandSpeedGameTopTenPlayer;
 import Java.basic.HandSpeedGame;
+import Java.util.CheckNumberAttribution;
+import Java.util.CheckTheWeather;
 import Java.util.RegisterOrLoginByXML;
 import Java.util.exception.LoginException;
+import org.dom4j.Element;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        HandSpeedGame.windows("19271115866");
+    public static void main(String[] args) throws IOException {
         System.out.println("欢迎来到本世纪末！");
-        boolean windows = UIWindows();
-        if(windows == true){
+        Element windows = UIWindows();
+        if(windows != null){
             System.out.println("登录成功，进入主菜单：\n1.查询天气\n2.查询手机号归属地\n3.手速游戏\n4.查询手速游戏前十用户");
             Scanner input = new Scanner(System.in);
             String choose01 = input.nextLine();
@@ -31,11 +35,30 @@ public class Main {
                 }
             }
 
+            switch(choose){
+
+                case 1:
+                    CheckTheWeather.windows();
+                break;
+                case 2:
+                    CheckNumberAttribution.windows();
+                    break;
+                case 3:
+                    HandSpeedGame.windows(windows.attribute("user").getValue());
+                    break;
+                case 4:
+//                    CheckHandSpeedGameTopTenPlayer
+                    System.out.println("尚在思索中！");
+                    break;
+                default:
+                    break;
+            }
+
         }
 
     }
 
-    private static boolean UIWindows() {
+    private static Element UIWindows() {
         Scanner input = new Scanner(System.in);
         boolean flag = true;
         while(flag) {
@@ -50,12 +73,13 @@ public class Main {
                     choose = 1;
                 } else if (choose01.equals("注册")) {
                     choose = 2;
+                } else if (choose01.equals("退出")){
+                    choose = 0;
                 }
             }
             if (choose == 1) {
                 try {
-                    RegisterOrLoginByXML.LoginInput();
-                    return true;
+                    return RegisterOrLoginByXML.LoginInput();
                 } catch (LoginException e) {
                     System.out.println(e.getMessage());
                     continue;
@@ -67,8 +91,10 @@ public class Main {
                     System.out.println(e.getMessage());
                     continue;
                 }
+            } else if (choose == 0){
+                return null;
             }
         }
-        return flag;
+        return null;
     }
 }
