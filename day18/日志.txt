@@ -1,0 +1,72 @@
+8 queries executed, 8 success, 0 errors, 0 warnings
+
+查询：drop database quiz01
+
+共 5 行受到影响
+
+执行耗时   : 0.092 sec
+传送时间   : 1.664 sec
+总耗时      : 1.757 sec
+--------------------------------------------------
+
+查询：create database quiz01
+
+共 1 行受到影响
+
+执行耗时   : 0.020 sec
+传送时间   : 1.667 sec
+总耗时      : 1.688 sec
+--------------------------------------------------
+
+查询：use quiz01
+
+共 0 行受到影响
+
+执行耗时   : 0.001 sec
+传送时间   : 0.001 sec
+总耗时      : 0.003 sec
+--------------------------------------------------
+
+查询：create table users(uid int primary key auto_increment, username varchar(45),age int, place varchar(200))
+
+共 0 行受到影响
+
+执行耗时   : 0.023 sec
+传送时间   : 1.686 sec
+总耗时      : 1.709 sec
+--------------------------------------------------
+
+查询：create Table bookstyle(bsid int primary key auto_increment, bookname varchar(100))
+
+共 0 行受到影响
+
+执行耗时   : 0.044 sec
+传送时间   : 0.006 sec
+总耗时      : 0.051 sec
+--------------------------------------------------
+
+查询：create table book(bid int primary key auto_increment,bookname varchar(250),writer varchar(50),bsid int, constraint fk_bsid forei...
+
+共 0 行受到影响
+
+执行耗时   : 0.098 sec
+传送时间   : 0.005 sec
+总耗时      : 0.103 sec
+--------------------------------------------------
+
+查询：create table comments(pid int primary key auto_increment,bid int,CONSTRAINT fk_bid FOREIGN KEY(bid) REFERENCES book(bid),uid int...
+
+共 0 行受到影响
+
+执行耗时   : 0.070 sec
+传送时间   : 0.004 sec
+总耗时      : 0.074 sec
+--------------------------------------------------
+
+查询：create table collect(uid int,CONSTRAINT fk_ucid FOREIGN KEY(uid) REFERENCES users(uid),bid int,CONSTRAINT fk_bcid FOREIGN KEY(bi...
+
+共 0 行受到影响
+
+执行耗时   : 0.043 sec
+传送时间   : 0.007 sec
+总耗时      : 0.050 sec
