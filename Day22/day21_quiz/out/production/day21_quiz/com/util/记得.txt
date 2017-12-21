@@ -1,0 +1,91 @@
+//    public static void  register() throws RegisterException, IOException {
+//        String name = null;
+//        String job = null;
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("请输入用户名！");
+//        String user = input.nextLine();
+//        isreasonable(user);
+//        System.out.println("请输入密码！");
+//        String password = input.nextLine();
+//        isSafe(password);
+//        while(flag) {
+//            System.out.println("请输入姓名！");
+//            name = input.nextLine();
+//            if (!isemp(name)){
+//                flag = false;
+//            }
+//        }
+//        flag = true;
+//        while(flag){
+//            System.out.println("请输入职业！");
+//            job = input.nextLine();
+//            if (!isemp(name)){
+//                flag = false;
+//            }
+//        }
+//        flag = true;
+//        file = new FileWriter("src\\output.xml");
+//
+//
+//
+//    }
+//
+//    private static boolean isemp(String name) {
+//        if(name.equals("")){
+//            return true;
+//        }
+//        return false;
+//    }
+//
+//    public static void isreasonable(String user) throws RegisterException, SQLException {
+//
+//        Connection connection = JdbcUtil.getConnection();
+//        Statement statement = connection.createStatement();
+//        String users = "select user from users";
+//        ResultSet resultSet = statement.executeQuery(users);
+//        String user1 = resultSet.getString(user);
+//        if (user1.equals(user)){
+//            throw new AccountAlreadyExistsException();
+//        }
+//        resultSet.close();
+//        statement.close();
+//        connection.close();
+//    }
+//
+//    public static void  isSafe(String password) throws RegisterException {
+//        if (password  == null){
+//            throw new PasswordInsecureException();
+//        }
+//        if (password.length() > 20){
+//            throw new PasswordTooLongException();
+//        }
+//        num = 0;
+//        for (int i = 0; i <=9 ; i++) {
+//            if(password.contains(String.valueOf(i)) && num == 0) {
+//                num++;
+////              System.out.println(num);
+//                break;
+//            }
+//        }
+//        for (char i = 'a'; i <= 'z' ; i++) {
+//            if (password.contains(String.valueOf(i)) && num == 1) {
+//                num++;
+//                break;
+//            }
+//        }
+//        for (char i = 'A'; i <= 'Z'; i++) {
+//            if (password.contains(String.valueOf(i)) && num == 2) {
+//                num++;
+//                break;
+//            }
+//        }
+//        if(num < 3 || password.length() < 8){
+////           System.out.println(num);
+//            throw new PasswordInsecureException();
+//        }
+//    }
+//
+//    public static void login(String user, String password) throws LoginException {
+//
+//    }
+//
