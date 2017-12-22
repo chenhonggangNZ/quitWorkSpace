@@ -13,6 +13,7 @@
             float: right;
             display: block;
             margin: 0 10px;
+            position: relative;
         }
         header{
             margin: 20px auto;
@@ -29,6 +30,31 @@
         }
         ul li a:hover{
             color: #1404ff;
+        }
+        ul li ul{
+            display: none;
+            top: 18px;
+            left: -90px;
+            width:150px;
+            position: absolute;
+        }
+        ul li:hover ul{
+            display: block;
+        }
+        ul li ul li {
+            clear: both;
+            display: block;
+            width:auto;
+        }
+        ul li ul li a{
+            text-decoration: none;
+            font-weight: normal;
+            display: block;
+            padding: 4px;
+        }
+        ul li ul li a:hover{
+            background-color: #4092ff;
+            color: white;
         }
         .topright{
             background-color: #4092ff;
@@ -79,13 +105,132 @@
             right: 1px;
             bottom: 1px;
         }
+        #unblock{
+            /*display: none;*/
+            position: fixed;
+            width: 90px;
+            left: auto;
+            right: 0px;
+            top: 0px;
+            text-align: center;
+            background: #f9f9f9;
+            height: 100%;
+        }
+        #zhidao{
+            width: 36px;
+            display: block;
+            background: url("bdbF51.png") no-repeat -36px;
+            height: 36px;
+            margin: 0px auto;
+        }
+        #nuomi{
+            width: 36px;
+            display: block;
+            background: url("bdbF51.png") no-repeat;
+            height: 36px;
+            margin: 0px auto;
+        }
+        #wenku{
+            width: 36px;
+            display: block;
+            background: url("bdbF51.png") no-repeat -148px;
+            height: 36px;
+            margin: 0px auto;
+        }
+        #yinyue{
+            width: 36px;
+            display: block;
+            background: url("bdbF51.png") no-repeat -74px;
+            height: 36px;
+            margin: 0px auto;
+        }
+        #tupian{
+            width: 36px;
+            display: block;
+            background: url("bdbF51.png") no-repeat -112px;
+            height: 36px;
+            margin: 0px auto;
+        }
+        #paihangbang{
+            width: 36px;
+            display: block;
+            background: url("bdbF51.png") no-repeat -184px;
+            height: 36px;
+            margin: 0px auto;
+        }
+        .defaultli{
+            display: block;
+            padding: 20px;
+        }
+        .changeli{
+            float: none;
+            display: block;
+            padding: 10px 5px;
+            font-size: 14px;
+        }
+        .changea{
+            text-decoration: none;
+            font-weight: normal;
+        }
+        .changea:hover{
+            text-decoration: underline;
+            color: black;
+            background: #f9f9f9;
+        }
+        #changeli{
+            padding: 0px;
+        }
+        #changeli:hover{
+            padding: 0px;
+            background: #f9f9f9;
+            color: black;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 <header>
     <ul>
-        <li><a href="" class="topright">更多产品</a></li>
-        <li><a href="" class="topsecond">设置</a></li>
+        <li><a href="" class="topright">更多产品</a>
+            <ul id="unblock">
+            <li class="changeli" >更多产品</li>
+            <li class="changeli">
+                <span id="nuomi"></span>
+                <a class="changea" href="">糯米</a>
+            </li>
+            <li class="changeli">
+                <span id="yinyue"></span>
+                <a class="changea" href="">音乐</a>
+            </li>
+            <li class="changeli">
+                <span id="tupian"></span>
+                <a class="changea" href="">图片</a>
+            </li>
+            <li class="changeli">
+                <span id="zhidao"></span>
+                <a class="changea" href="">知道</a>
+            </li>
+            <li class="changeli">
+                <span id="wenku"></span>
+                <a class="changea" href="">文库</a>
+            </li>
+            <li class="changeli">
+                <span id="paihangbang"></span>
+                <a class="changea" href="">排行榜</a>
+            </li>
+            <li class="changeli" id="all">
+                <a id="changeli" style="font-weight: normal;" href="">全部产品>></a>
+            </li>
+        </ul>
+        </li>
+        <li><a href="" class="topsecond">设置</a>
+            <ul>
+                <li><a href="">搜索设置</a></li>
+                <li><a href="">高级搜索</a></li>
+                <li><a href="">关闭预测</a></li>
+                <li><a href="">搜索历史</a></li>
+            </ul>
+        </li>
         <li><a href="" class="topsecond">登录</a></li>
         <li><a href="">学术</a></li>
         <li><a href="">贴吧</a></li>
@@ -94,6 +239,7 @@
         <li><a href="">hao123</a></li>
         <li><a href="">新闻</a></li>
     </ul>
+
 </header>
 <main>
     <div class="baiduyixia">
