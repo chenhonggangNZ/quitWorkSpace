@@ -25,22 +25,28 @@
             <a href="" style="margin-left: 0px; float: left;display: block; margin-left:3px; margin-top: 13px; color: #377EE9;">邮箱号注册</a>
             </div>
             <form action="" method="post" class="f_form">
-                <label for="adress" class="sequence a">邮箱地址<span class="sect"></span></label>
-                <input type="text" class="input" id="adress" name="" placeholder="请输入邮箱"><br>
+                <label for="adress" class="sequence a"  >邮箱地址<span class="sect"></span></label>
+                <input type="text" class="input" id="adress" onfocus="onfocuss('remindera')" onblur="onblurs('remindera')" name="" placeholder="请输入邮箱"><br>
+                <reminder id="remindera">请输入正确的邮箱地址如：chenhonggang@qq.com</reminder>
                 <label for="passworded" class="sequence p">设置密码<span class="sect"></span></label>
-                <input type="password" class="input" id="passworded" name="" placeholder="请输入密码"><br>
+                <input type="password" class="input" id="passworded" onfocus="onfocuss('reminderp')" onblur="onblurs('reminderp')" name="" placeholder="请输入密码"><br>
+                <reminder id="reminderp">请设置您的密码：密码必须包含数字，字母大小写！密码长度大于8位且不多于20位</reminder>
                 <label for="rePassword" class="sequence r">确认密码<span class="sect"></span></label>
-                <input type="password" class="input" id="rePassword" name="" placeholder="请再次填写密码"><br>
+                <input type="password" class="input" id="rePassword" onfocus="onfocuss('remindert')" onblur="onblurs('remindert')" name="" placeholder="请再次填写密码"><br>
+                <reminder id="remindert">请再次输入您的密码：两次输入密码须一致</reminder>
                 <label for="tel_number" class="sequence t">手机号<span class="sect"></span></label>
-                <input type="tel" class="input" id="tel_number" name="" placeholder="请输入手机号"><br>
+                <input type="tel" class="input" id="tel_number" onfocus="onfocuss('remindertl')" onblur="onblurs('remindertl')" name="" placeholder="请输入手机号"><br>
+                <reminder id="remindertl">请输入正确的11位手机号码如：18162377747</reminder>
                 <label for="focs" class="sequence f">图片验证码<span class="sect"></span></label>
-                <input type="text" class="input" id="focs" name="" placeholder="请输入图片验证码"><br>
+                <input type="text" class="input" id="focs" onfocus="onfocuss('remindertp')" onblur="onblurs('remindertp')" name="" placeholder="请输入图片验证码"><br>
+                <reminder id="remindertp">请仔细分辨图片，如看不清请刷新</reminder>
                 <label for="message" class="sequence m">短信验证码<span class="sect"></span></label>
-                <input type="text" class="input" id="message" name="" placeholder="请输入短信验证码"><br>
+                <input type="text" class="input" id="message" onfocus="onfocuss('reminderm')" onblur="onblurs('reminderm')" name="" placeholder="请输入短信验证码"><br>
+                <reminder id="reminderm">请注意查收验证码！</reminder>
                 <span></span><input type="checkbox" class="ifuse"><span style="margin-left: 2px;margin-top: 10px; display: inline-block;position: absolute;left: 95px;">同意并遵守</span>
                 <a href="" style="display: inline-block;margin-left: 2px;position: absolute;left: 175px; margin-top: 10px; color: #377EE9;">&lt;&lt;服务条款&gt;&gt;</a>
             <input type="submit" value="注册" class="input" id="sublimet"><br>
-            <a href="quiz_24Login.css" style="display: inline-block; float: right; margin-right: 74px; margin-top: 10px;color: #377EE9; font-weight: bold;">去登陆</a>
+            <a href="quiz_24Loginhtml.html" style="display: inline-block; float: right; margin-right: 74px; margin-top: 10px;color: #377EE9; font-weight: bold;">去登陆</a>
             </form>
 
         </register>
@@ -51,4 +57,14 @@
 <footer></footer>
 
 </body>
+<script type="text/javascript">
+    function onfocuss(ele) {
+        var element = document.getElementById(ele);
+        element.style.display="block";
+    }
+    function onblurs(ele) {
+        var elementById = document.getElementById(ele);
+        elementById.style.display="none";
+    }
+</script>
 </html>

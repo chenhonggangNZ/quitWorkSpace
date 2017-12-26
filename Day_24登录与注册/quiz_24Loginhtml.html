@@ -5,6 +5,7 @@
     <meta name="keyword" content="我擦你#$%#">
     <title>登录本网站</title>
     <link rel="stylesheet" href="quiz_24Login.css" type="text/css">
+
 </head>
 <body>
 <header>
@@ -15,6 +16,7 @@
         <li class="borderLeft floatRight"><a href="">帮助与文档</a></li>
         <li class="floatRight"><a href="">网易云首页</a></li>
     </ul>
+    <span style="color: black; float: right;" id="times"></span>
 </header>
 <main>
     <simple>
@@ -43,4 +45,24 @@
 </main>
 <footer></footer>
 </body>
+<script type="text/javascript">
+    function show() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var timess= "" + year + "年" + month + "月" + day + "日 " + hours + ":" + minutes + ":" + seconds + "";
+        return timess;
+    }
+    function times() {
+        var times = document.getElementById("times");
+        setInterval(function () {
+            times.innerText= show();
+        },1000);
+    }
+    times();
+</script>
 </html>

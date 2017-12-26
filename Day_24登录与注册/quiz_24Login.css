@@ -114,6 +114,10 @@ login h1{
     font-size: 22px;
     text-indent: 35px;
  }
+#password:focus{
+    border: solid 2px red;
+    font-size: 30px;
+}
 #service{
     margin-left: 50px;
     margin-top: 100px;
@@ -140,6 +144,10 @@ login h1{
     border: 1px #377EE9;
     border-radius: 2px 2px;
 }
+#login:active{
+    background-color: white;
+    color: #53ff14;
+}
 main simple login form{
     position: relative;
 }
@@ -152,6 +160,10 @@ main simple login form{
     left: 50px;
     z-index: 100;
     position: absolute;
+}
+#user:focus{
+    border: solid 2px red;
+    font-size: 30px;
 }
 #passwords{
     width: 21px;
@@ -239,5 +251,75 @@ main simple register{
     font-weight: bold;
     color: white;
     text-indent: 0px;
+}
+#sublimet:active{
+    background-color: white;
+    color: #53ff14;
+}
+#remindera{
+    width: 280px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 25px;
+    padding: 2px;
+    color: red;
+    right:-220px;
+    text-align: left;
+}
+#reminderp{
+    width: 300px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 90px;
+    padding: 2px;
+    color: red;
+    right:-240px;
+    text-align: left;
+}
+#remindert{
+    width: 280px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 163px;
+    padding: 2px;
+    color: red;
+    right:-220px;
+    text-align: left;
+}
+#remindertl{
+    width: 280px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 230px;
+    padding: 2px;
+    color: red;
+    right:-220px;
+    text-align: left;
+}
+#remindertp{
+    width: 280px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 310px;
+    padding: 2px;
+    color: red;
+    right:-220px;
+    text-align: left;
+}
+#reminderm{
+    width: 280px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 378px;
+    padding: 2px;
+    color: red;
+    right:-220px;
+    text-align: left;
 }
 /*---------footer区---------*/
