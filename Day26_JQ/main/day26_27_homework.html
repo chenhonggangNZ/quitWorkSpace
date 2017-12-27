@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>what's your choose?</title>
+    <link href="../css/day26_css.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="all">
+    <main id="main">
+        <button onclick="choosestyle()">点击设置样式</button>
+        <div id="wPointer">
+            <div id="leftPointer"></div>
+            <div id="topPinter">
+            <div id="centreFocusB"></div>
+            </div>
+            <div id="rightPointer"></div>
+            <div id="bottomPinter">
+            <div id="centreFocusW"></div>
+            </div>
+        </div>
+        <div id="outside">
+        <div id="whatA"></div>
+        <div id="whatB"></div>
+        </div>
+        <div id="standard"></div>
+    </main>
+    <choose>
+        <p class="p1">选择背景</p>
+        <div>
+            <a style="background-color: black;" onclick="colorSetO()">黑灰色</a>
+            <a style="background-color: blue;" onclick="colorSetT()">蓝红色</a>
+            <a  style="background-color: green;" onclick="colorSetTR()">黄绿色</a>
+        </div>
+        <p class="p1">选择形状</p>
+        <div>
+            <a onclick="styleSetO()">太极</a>
+            <a onclick="styleSetT()">柱形</a>
+            <a onclick="styleSetTR()">正方形</a>
+        </div>
+        <p class="p1">选择大小</p>
+        <div>
+            <a onclick="sizeSetO()">小号</a>
+            <a onclick="sizeSetT()">中号</a>
+            <a onclick="sizeSetTR()">大号</a>
+        </div>
+        <div> </div>
+        <div onclick="inhert()" style="width: 80px;height: 40px; display: inline-block; margin-top: 50px; background-color: gray; line-height: 40px; font-weight: bold;">恢复</div>
+        <div onclick="closeT()" style="width: 80px;height: 40px; display: inline-block; margin: 50px; background-color: gray; line-height: 40px; font-weight: bold;">确定</div>
+    </choose>
+</div>
+</body>
+<script type="text/javascript">
+    var num = 3;
+    function choosestyle() {
+        $('choose').css({"display":"block"});
+    }
+    function colorSetO() {
+        if(num === 1){
+            $('#centreFocusB').css({"backgroundColor":"#eeeeee"});
+            $('#centreFocusW').css({"backgroundColor":"black"});
+            $('#topPinter').css({"backgroundColor":"black"});
+            $('#bottomPinter').css({"backgroundColor":"#eeeeee"});
+            $('#leftPointer').css({"backgroundColor":"#eeeeee"});
+            $('#rightPointer').css({"backgroundColor":"black"});
+        } else if (num === 2){
+            $('#whatA').css({"backgroundColor":"#eeeeee"});
+            $('#outside').css({"backgroundColor":"#aaaaaa"});
+            $('#whatB').css({"backgroundColor":"#aaaaaa"});
+        } else if (num === 3){
+            $('#standard').css({"backgroundColor":"#aaaaaa"});
+        }
+    }
+
+    function colorSetT() {
+        if(num === 1){
+            $('#centreFocusB').css({"backgroundColor":"blue"});
+            $('#centreFocusW').css({"backgroundColor":"red"});
+            $('#topPinter').css({"backgroundColor":"red"});
+            $('#bottomPinter').css({"backgroundColor":"blue"});
+            $('#leftPointer').css({"backgroundColor":"blue"});
+            $('#rightPointer').css({"backgroundColor":"red"});
+        } else if (num === 2){
+            $('#whatA').css({"backgroundColor":"blue"});
+            $('#outside').css({"backgroundColor":"red"});
+            $('#whatB').css({"backgroundColor":"red"});
+        } else if (num === 3){
+            $('#standard').css({"backgroundColor":"red"});
+        }
+    }
+
+    function colorSetTR() {
+        if(num === 1){
+            $('#centreFocusB').css({"backgroundColor":"yellow"});
+            $('#centreFocusW').css({"backgroundColor":"green"});
+            $('#topPinter').css({"backgroundColor":"green"});
+            $('#bottomPinter').css({"backgroundColor":"yellow"});
+            $('#leftPointer').css({"backgroundColor":"yellow"});
+            $('#rightPointer').css({"backgroundColor":"green"});
+        } else if (num === 2){
+            $('#whatA').css({"backgroundColor":"yellow"});
+            $('#outside').css({"backgroundColor":"green"});
+            $('#whatB').css({"backgroundColor":"green"});
+        } else if (num === 3){
+            $('#standard').css({"backgroundColor":"green"});
+        }
+    }
+
+    function styleSetO() {
+        num = 1;
+        $('#wPointer').css({"display":"inline-block"});
+        $('#outside').css({"display":"none"});
+        $('#standard').css({"display":"none"});
+    }
+    function styleSetT() {
+        num = 2;
+        $('#outside').css({"display":"inline-block"});
+        $('#wPointer').css({"display":"none"});
+        $('#standard').css({"display":"none"});
+    }
+    function styleSetTR() {
+        num = 3;
+        $('#standard').css({"display":"inline-block"});
+        $('#wPointer').css({"display":"none"});
+        $('#outside').css({"display":"none"});
+    }
+
+    function sizeSetO() {
+        if (num === 1){
+            $('#centreFocusB').css({"width":"30px","height":"30px","borderRadius":"15px","top":"30px","left":"30px","right":"30px","bottom":"30px"});
+            $('#centreFocusW').css({"width":"30px","height":"30px","borderRadius":"15px","top":"30px","left":"30px","right":"30px","bottom":"30px"});
+            $('#topPinter').css({"width":"90px","height":"90px","borderRadius":"45px","left":"45px","top":"0px","right":"45px"});
+            $('#bottomPinter').css({"width":"90px","height":"90px","borderRadius":"45px","left":"45px","right":"45px","bottom":"0px"});
+            $('#leftPointer').css({"width":"90px","height":"180px","borderRadius":"90px 0px 0px 90px"});
+            $('#rightPointer').css({"width":"90px","height":"180px","borderRadius":"0px 90px 90px 0px"});
+            $('#wPointer').css({"width":"180px","height":"180px","borderRadius":"90px"});
+        } else if (num === 2){
+            $('#whatA').css({"width":"100px","height":"100px","borderRadius":"180px 0px 180px 0px","transform":"rotate(45deg)","left":"20px","top":"-50px"});
+            $('#whatB').css({"width":"100px","height":"100px","borderRadius":"180px 0px 180px 0px","transform":"rotate(45deg)","left":"20px","bottom":"-50px"});
+            $('#outside').css({"width":"140px","height":"180px","marginLeft":"30px","marginTop":"30px"});
+        } else if (num === 3){
+            $('#standard').css({"width":"180px","height":"180px"});
+        }
+    }
+    function sizeSetT() {
+        if (num === 1){
+        $('#centreFocusB').css({"width":"60px","height":"60px","borderRadius":"30px","top":"60px","left":"60px","right":"60px","bottom":"60px"});
+        $('#centreFocusW').css({"width":"60px","height":"60px","borderRadius":"30px","top":"60px","left":"60px","right":"60px","bottom":"60px"});
+        $('#topPinter').css({"width":"180px","height":"180px","borderRadius":"90px","left":"90px","top":"0px","right":"90px"});
+        $('#bottomPinter').css({"width":"180px","height":"180px","borderRadius":"90px","left":"90px","right":"90px","bottom":"0px"});
+        $('#leftPointer').css({"width":"180px","height":"360px","borderRadius":"180px 0px 0px 180px"});
+        $('#rightPointer').css({"width":"180px","height":"360px","borderRadius":"0px 180px 180px 0px"});
+        $('#wPointer').css({"width":"360px","height":"360px","borderRadius":"180px"});
+        } else if (num === 2){
+            $('#whatA').css({"width":"200px","height":"200px","borderRadius":"360px 0px 360px 0px","transform":"rotate(45deg)","left":"40px","top":"-100px"});
+            $('#whatB').css({"width":"200px","height":"200px","borderRadius":"360px 0px 360px 0px","transform":"rotate(45deg)","left":"40px","bottom":"-100px"});
+            $('#outside').css({"width":"280px","height":"360px","marginLeft":"30px","marginTop":"60px"});
+        } else if (num === 3) {
+            $('#standard').css({"width":"360px","height":"360px"});
+        }
+    }
+    function sizeSetTR() {
+        if (num === 1){
+            $('#centreFocusB').css({"width":"90px","height":"90px","borderRadius":"45px","top":"90px","left":"90px","right":"90px","bottom":"90px"});
+            $('#centreFocusW').css({"width":"90px","height":"90px","borderRadius":"45px","top":"90px","left":"90px","right":"90px","bottom":"90px"});
+            $('#topPinter').css({"width":"270px","height":"270px","borderRadius":"135px","left":"135px","top":"0px","right":"135px"});
+            $('#bottomPinter').css({"width":"270px","height":"270px","borderRadius":"135px","left":"135px","right":"135px","bottom":"0px"});
+            $('#leftPointer').css({"width":"270px","height":"540px","borderRadius":"270px 0px 0px 270px"});
+            $('#rightPointer').css({"width":"270px","height":"540px","borderRadius":"0px 270px 270px 0px"});
+            $('#wPointer').css({"width":"540px","height":"540px","borderRadius":"270px"});
+        } else if(num === 2){
+            $('#whatA').css({"width":"300px","height":"300px","borderRadius":"540px 0px 540px 0px","transform":"rotate(45deg)","left":"60px","top":"-150px"});
+            $('#whatB').css({"width":"300px","height":"300px","borderRadius":"540px 0px 540px 0px","transform":"rotate(45deg)","left":"60px","bottom":"-150px"});
+            $('#outside').css({"width":"420px","height":"540px","marginLeft":"90px","marginTop":"90px"});
+        } else if (num === 3) {
+            $('#standard').css({"width":"540px","height":"540px"});
+        }
+    }
+
+    function inhert() {
+       colorSetO();
+       sizeSetO();
+       styleSetO();
+    }
+    function closeT() {
+        $('choose').css({"display":"none"});
+    }
+</script>
+</html>
