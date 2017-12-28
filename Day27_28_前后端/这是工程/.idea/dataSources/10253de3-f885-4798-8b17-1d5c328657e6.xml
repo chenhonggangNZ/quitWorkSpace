@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="day18">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="dedecmsv57utf8sp2"/>
+    <schema id="4" parent="1" name="dinner"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="quiz">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="9" parent="1" name="quiz02">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="10" parent="1" name="quiz03">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="11" parent="1" name="test"/>
+    <schema id="12" parent="1" name="whatilike"/>
+    <table id="13" parent="2" name="likeme"/>
+    <table id="14" parent="2" name="student"/>
+    <table id="15" parent="2" name="teacher"/>
+    <table id="16" parent="8" name="book"/>
+    <table id="17" parent="8" name="comment"/>
+    <table id="18" parent="8" name="hw_stu"/>
+    <table id="19" parent="8" name="hw_user"/>
+    <table id="20" parent="8" name="type"/>
+    <table id="21" parent="8" name="u_coll_bk"/>
+    <table id="22" parent="9" name="dmt"/>
+    <table id="23" parent="9" name="employee"/>
+    <table id="24" parent="9" name="hw_user"/>
+    <table id="25" parent="9" name="paylevel"/>
+    <table id="26" parent="9" name="st_year"/>
+    <table id="27" parent="9" name="stu"/>
+    <table id="28" parent="9" name="test"/>
+    <table id="29" parent="10" name="person"/>
+    <table id="30" parent="10" name="users"/>
+    <column id="31" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="32" parent="13" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="33" parent="13" name="gender">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="34" parent="13" name="age">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="35" parent="13" name="content">
+      <Position>5</Position>
+      <DataType>varchar(300)|0</DataType>
+    </column>
+    <column id="36" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="37" parent="14" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="38" parent="14" name="gender">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="39" parent="14" name="age">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="40" parent="14" name="chinese">
+      <Position>5</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="41" parent="14" name="math">
+      <Position>6</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="42" parent="14" name="english">
+      <Position>7</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="43" parent="15" name="name">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="44" parent="15" name="age">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="45" parent="15" name="gender">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="46" parent="15" name="score">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="47" parent="16" name="bkid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="48" parent="16" name="bkname">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="16" name="author">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="16" name="tid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="51" parent="16" name="book_fk_type">
+      <ColNames>tid</ColNames>
+    </index>
+    <key id="52" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>bkid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="16" name="book_fk_type">
+      <ColNames>tid</ColNames>
+      <RefSchemaName>quiz</RefSchemaName>
+      <RefTableName>type</RefTableName>
+      <RefColNames>tid</RefColNames>
+    </foreign-key>
+    <column id="54" parent="17" name="comid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="55" parent="17" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="17" name="bkid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="57" parent="17" name="uid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="58" parent="17" name="datetime">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="59" parent="17" name="comment_fk_bkid">
+      <ColNames>bkid</ColNames>
+    </index>
+    <index id="60" parent="17" name="comment_fk_uid">
+      <ColNames>uid</ColNames>
+    </index>
+    <key id="61" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>comid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="62" parent="17" name="comment_fk_bkid">
+      <ColNames>bkid</ColNames>
+      <RefSchemaName>quiz</RefSchemaName>
+      <RefTableName>book</RefTableName>
+      <RefColNames>bkid</RefColNames>
+    </foreign-key>
+    <foreign-key id="63" parent="17" name="comment_fk_uid">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>quiz</RefSchemaName>
+      <RefTableName>hw_user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="64" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="65" parent="18" name="NAME">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="66" parent="18" name="gender">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="67" parent="18" name="chinese">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="68" parent="18" name="math">
+      <Position>5</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="69" parent="18" name="english">
+      <Position>6</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="70" parent="18" name="age">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="71" parent="19" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="72" parent="19" name="uname">
+      <Position>2</Position>
+      <DataType>char(60)|0</DataType>
+    </column>
+    <column id="73" parent="19" name="age">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="74" parent="19" name="loc">
+      <Position>4</Position>
+      <DataType>char(50)|0</DataType>
+    </column>
+    <key id="75" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="76" parent="20" name="tid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="77" parent="20" name="tname">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="78" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>tid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="79" parent="21" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="80" parent="21" name="bkid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="81" parent="21" name="uk_ucb">
+      <ColNames>uid
+bkid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="82" parent="21" name="u_coll_bkid_fk_bkid">
+      <ColNames>bkid</ColNames>
+    </index>
+    <key id="83" parent="21" name="uk_ucb">
+      <ColNames>uid
+bkid</ColNames>
+      <UnderlyingIndexName>uk_ucb</UnderlyingIndexName>
+    </key>
+    <foreign-key id="84" parent="21" name="u_coll_bkid_fk_uid">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>quiz</RefSchemaName>
+      <RefTableName>hw_user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <foreign-key id="85" parent="21" name="u_coll_bkid_fk_bkid">
+      <ColNames>bkid</ColNames>
+      <RefSchemaName>quiz</RefSchemaName>
+      <RefTableName>book</RefTableName>
+      <RefColNames>bkid</RefColNames>
+    </foreign-key>
+    <column id="86" parent="22" name="dmtid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="87" parent="22" name="dmtname">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="88" parent="22" name="location">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="89" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dmtid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="90" parent="23" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="91" parent="23" name="name">
+      <Position>2</Position>
+      <DataType>mediumtext|0</DataType>
+    </column>
+    <column id="92" parent="23" name="job">
+      <Position>3</Position>
+      <DataType>mediumtext|0</DataType>
+    </column>
+    <column id="93" parent="23" name="managerId">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="94" parent="23" name="hiredate">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="95" parent="23" name="pay">
+      <Position>6</Position>
+      <DataType>double(8,2)|0</DataType>
+    </column>
+    <column id="96" parent="23" name="prize">
+      <Position>7</Position>
+      <DataType>double(8,2)|0</DataType>
+    </column>
+    <column id="97" parent="23" name="dmtid">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="98" parent="24" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="99" parent="24" name="uname">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="100" parent="24" name="loc">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="101" parent="24" name="age">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="102" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="103" parent="25" name="level">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="104" parent="25" name="lowest">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="105" parent="25" name="heightest">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="106" parent="26" name="year">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="107" parent="26" name="年利润_百万">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="108" parent="27" name="name">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="109" parent="28" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="110" parent="28" name="d">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="111" parent="28" name="fk__">
+      <ColNames>d</ColNames>
+    </index>
+    <key id="112" parent="28" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="113" parent="28" name="fk__">
+      <ColNames>d</ColNames>
+      <RefSchemaName>quiz02</RefSchemaName>
+      <RefTableName>dmt</RefTableName>
+      <RefColNames>dmtid</RefColNames>
+    </foreign-key>
+    <column id="114" parent="29" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="115" parent="29" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="116" parent="29" name="age">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="117" parent="29" name="gender">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="118" parent="29" name="job">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <index id="119" parent="29" name="FK_uid">
+      <ColNames>uid</ColNames>
+    </index>
+    <foreign-key id="120" parent="29" name="FK_uid">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>quiz03</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="121" parent="30" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="122" parent="30" name="username">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="123" parent="30" name="nickname">
+      <Position>3</Position>
+      <DataType>varchar(60)|0</DataType>
+    </column>
+    <column id="124" parent="30" name="password">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="125" parent="30" name="username">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="126" parent="30" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="127" parent="30" name="username">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>username</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
