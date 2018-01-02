@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keyword" content="您操蛋#$*%$" >
+    <title>注册</title>
+    <link rel="stylesheet" href="css/quiz_24Login.css" type="text/css">
+</head>
+<body>
+<header>
+    <logo>
+        <img src="img/logo.png">
+    </logo>
+</header>
+<main style="padding-top: 100px;">
+    <simple style="width: 1300px;height: 800px; margin: 0px auto; display: block; background: white;">
+        <register>
+                <h1 style="padding-top: 30px;">账号注册</h1>
+            <div style="display: inline-block;height: 34px;">
+            <span style="background: url(img/ifyouneed.png) -20px -1px; width:18px;height: 23px;display: block; margin-top: 10px; float: left"></span>
+            <a href="" style="display: block;margin-top: 13px; margin-left: 2px; float: left; color: black;" >手机号注册</a>
+            </div>
+            <div style="display: inline-block;">
+            <span style="background: url(img/ifyouneed.png) -1px -21px; display:block; float: left; width:18px;height: 23px; margin-top: 10px; margin-left: 30px;"></span>
+            <a href="" style="margin-left: 0px; float: left;display: block; margin-left:3px; margin-top: 13px; color: #377EE9;">邮箱号注册</a>
+            </div>
+            <form action="register" method="post" class="f_form">
+                <label for="adress" class="sequence a"  >用户名<span class="sect"></span></label>
+                <input type="text" class="input" id="adress" onfocus="onfocuss('remindera')" onblur="onblurs('remindera')" name="username" placeholder="请输入用户名"><br>
+                <reminder id="remindera">用户名只能是邮箱或手机号如：chenhonggangN@qq.com/18162377747</reminder>
+                <label for="passworded" class="sequence p">设置密码<span class="sect"></span></label>
+                <input type="password" class="input" id="passworded" onfocus="onfocuss('reminderp')" onblur="onblurs('reminderp')" name="password" placeholder="请输入密码"><br>
+                <reminder id="reminderp">请设置您的密码：密码必须包含数字，字母大小写！密码长度大于8位且不多于20位</reminder>
+                <label for="rePassword" class="sequence r">姓名<span class="sect"></span></label>
+                <input type="text" class="input" id="rePassword" onfocus="onfocuss('remindert')" onblur="onblurs('remindert')" name="name" placeholder="请输入姓名"><br>
+                <!--<reminder id="remindert">请再次输入您的密码：两次输入密码须一致</reminder>-->
+                <label for="tel_number" class="sequence t">您的年龄<span class="sect"></span></label>
+                <input type="tel" class="input" id="tel_number" onfocus="onfocuss('remindertl')" onblur="onblurs('remindertl')" name="age" placeholder="请输入年龄"><br>
+                <!--<reminder id="remindertl">请输入正确的11位手机号码如：18162377747</reminder>-->
+                <label for="focs" class="sequence f">性别信息<span class="sect"></span></label>
+                <input type="text" class="input" id="focs" onfocus="onfocuss('remindertp')" onblur="onblurs('remindertp')" name="gender" placeholder="请输入性别"><br>
+                <reminder id="remindertp">性别为男或女或精灵</reminder>
+                <label for="message" class="sequence m">职业<span class="sect"></span></label>
+                <input type="text" class="input" id="message" onfocus="onfocuss('reminderm')" onblur="onblurs('reminderm')" name="job" placeholder="请输入职业"><br>
+                <!--<reminder id="reminderm">请注意查收验证码！</reminder>-->
+                <!--<span></span><input type="checkbox" class="ifuse"><span style="margin-left: 2px;margin-top: 10px; display: inline-block;position: absolute;left: 95px;">同意并遵守</span>-->
+                <!--<a href="" style="display: inline-block;margin-left: 2px;position: absolute;left: 175px; margin-top: 10px; color: #377EE9;">&lt;&lt;服务条款&gt;&gt;</a>-->
+            <input type="submit" value="注册" class="input" id="sublimet"><br>
+            <a href="Login.html" style="display: inline-block; float: right; margin-right: 74px; margin-top: 10px;color: #377EE9; font-weight: bold;">去登陆</a>
+            </form>
+
+        </register>
+    </simple>
+
+</main>
+
+<footer></footer>
+
+</body>
+<script type="text/javascript">
+    function onfocuss(ele) {
+        var element = document.getElementById(ele);
+        element.style.display="block";
+    }
+    function onblurs(ele) {
+        var elementById = document.getElementById(ele);
+        elementById.style.display="none";
+    }
+</script>
+</html>
