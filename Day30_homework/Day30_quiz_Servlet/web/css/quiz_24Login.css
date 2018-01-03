@@ -1,0 +1,325 @@
+@charset "UTF-8";
+/*--------全局初始化---------*/
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+/*/----------全局CSS功能区-------*/
+.floatLeft{
+    float: left;
+}
+.floatRight{
+    float: right;
+}
+.clear{
+    clear: both;
+}
+.clearLeft{
+    clear: left;
+}
+.clearRight{
+    clear: right;
+}
+.borderLeft{
+    border-left: #ddd solid 1px;
+}
+
+
+
+/*--------header区---------*/
+    logo{
+        display: block;
+        float: left;
+        width: auto;
+        height: auto;
+    }
+    header ul li a{
+        display: block;
+        margin: 1px 20px;
+        color: #7294CA;
+        font-weight: bold;
+    }
+    header ul li{
+        display: block;
+    }
+    header{
+        width: 1300px;
+        margin: 20px auto;
+    }
+    header:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+/*--------main区------------*/
+main{
+    width: 100%;
+    height: 900px;
+    background-color: #F4F8FB;
+}
+simple{
+    position: relative;
+    width: 1200px;
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+}
+main simple img{
+    position: absolute;
+    display: block;
+    float: left;
+    left:0px;
+    top: 180px;
+
+}
+login{
+    width: 450px;
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    padding: 30px;
+    float: right;
+    height: 500px;
+    background-color: white;
+    text-align:center;
+}
+
+login h1{
+    font-size: 30px;
+    font-family:"楷体", "Adobe 黑体 Std R",sans-serif;
+}
+ #service,#AvoidLanding{
+    background-color: #ffffff;
+    width: 20px;
+    border: none;
+    height:20px;
+}
+ #service:checked{
+    background: #3F7BCD;
+}
+#user{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 350px;
+    height: 50px;
+    font-size: 22px;
+    text-indent: 35px;
+}
+#password{
+    height: 50px;
+    margin: 20px auto;
+    width: 350px;
+    font-size: 22px;
+    text-indent: 35px;
+ }
+#password:focus{
+    border: solid 2px red;
+    font-size: 30px;
+}
+#service{
+    margin-left: 50px;
+    margin-top: 100px;
+    float: left;
+}
+#AvoidLanding{
+    float: left;
+    margin-top: 100px;
+    margin-left: 80px;
+}
+.service{
+    float: left;
+  margin-top: 100px;
+}
+
+#login{
+    width: 350px;
+    height: 45px;
+    margin: 20px auto;
+    font-size: 25px;
+    font-weight: bold;
+    background: #377EE9;
+    color: white;
+    border: 1px #377EE9;
+    border-radius: 2px 2px;
+}
+#login:active{
+    background-color: white;
+    color: #53ff14;
+}
+main simple login form{
+    position: relative;
+}
+#users{
+    width: 21px;
+    height: 21px;
+    background: url("https://ursdoccdn.nosdn.127.net/yun/sprite_yun_20160907.png") no-repeat;
+    display: block;
+    top: 55px;
+    left: 50px;
+    z-index: 100;
+    position: absolute;
+}
+#user:focus{
+    border: solid 2px red;
+    font-size: 30px;
+}
+#passwords{
+    width: 21px;
+    height: 21px;
+    background: url("https://ursdoccdn.nosdn.127.net/yun/sprite_yun_20160907.png") -21px -2px no-repeat;
+    display: block;
+    top: 148px;
+    left: 50px;
+    z-index: 100;
+    position: absolute;
+}
+
+/*Register*/
+main simple register{
+    width: 500px;
+    height: 700px;
+    position: relative;
+    display: block;
+    background:white;
+    left: 25%;
+    text-align: center;
+}
+.input{
+    width: 350px;
+    height: 45px;
+    margin-top: 20px;
+    text-indent: 100px;
+}
+
+.sequence{
+    display: block;
+    width: 100px;
+    height: 48px;
+    position: absolute;
+    color:gray ;
+    font-size: 15px;
+}
+.a{
+    left: 70px;
+    top: 36px;
+}
+.p{
+    left: 70px;
+    top:105px;
+}
+.r{
+    left: 70px;
+    top: 173px;
+}
+.t{left: 70px;
+    top: 242px;
+}
+.f{
+    left: 70px;
+    top: 312px;
+}
+.m{left: 70px;
+    top: 382px;
+}
+.f_form{
+    position: relative;
+}
+.sect{
+    width: 8px;
+    height: 10px;
+    background: url("../img/ifyouneed.png") no-repeat -28px -69px;
+    display: block;
+    float: right;
+}
+.ifuse{
+    display: inline-block;
+    position: absolute;
+    left:75px;
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+}
+#sublimet{
+    margin-top: 40px;
+    background: #377EE9;
+    text-align: center;
+    border-radius: 2px;
+    border: solid 1px #377EE9;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-indent: 0px;
+}
+#sublimet:active{
+    background-color: white;
+    color: #53ff14;
+}
+#remindera{
+    width: 280px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 25px;
+    padding: 2px;
+    color: red;
+    right:-220px;
+    text-align: left;
+}
+#reminderp{
+    width: 300px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 90px;
+    padding: 2px;
+    color: red;
+    right:-240px;
+    text-align: left;
+}
+#remindert{
+    width: 280px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 163px;
+    padding: 2px;
+    color: red;
+    right:-220px;
+    text-align: left;
+}
+#remindertl{
+    width: 280px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 230px;
+    padding: 2px;
+    color: red;
+    right:-220px;
+    text-align: left;
+}
+#remindertp{
+    width: 280px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 310px;
+    padding: 2px;
+    color: red;
+    right:-220px;
+    text-align: left;
+}
+#reminderm{
+    width: 280px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    top: 378px;
+    padding: 2px;
+    color: red;
+    right:-220px;
+    text-align: left;
+}
+/*---------footer区---------*/
