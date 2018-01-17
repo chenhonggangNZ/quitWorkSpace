@@ -1,0 +1,27 @@
+
+<c3p0-config>
+    <default-config>
+        <!--//要使用的驱动-->
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <!--<property name="jdbcUrl">jdbc:mysql://172.16.52.203:3306/stu</property>-->
+        <!--<property name="user">root</property>-->
+        <!--<property name="password">1987222</property>-->
+        <!--//数据库的位置-->
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/quiz03?useUnicode=true&amp;characterEncoding=UTF-8</property>
+        <!--//用户名-->
+        <property name="user">root</property>
+        <!--//密码-->
+        <property name="password">Root</property>
+        <!--//默认连接池大小-->
+        <property name="initialPoolSize">5</property>
+        <!--最大空闲连接数-->
+        <property name="maxIdleTime">2</property>
+        <!--最大连接数-->
+        <property name="maxPoolSize">29</property>
+        <!--最小连接数-->
+        <property name="minPoolSize">2</property>
+
+    </default-config>
+
+
+</c3p0-config>

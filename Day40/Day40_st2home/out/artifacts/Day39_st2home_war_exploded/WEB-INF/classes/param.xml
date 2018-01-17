@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="param" extends="struts-default" abstract="true" namespace="/t">
+        <action name="user" class="bean.User" method="execute">
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <param name="repassword">确认密码</param>
+            <param name="telphone">手机号</param>
+            <param name="email">邮箱</param>
+            <param name="focs">验证码</param>
+        </action>
+        <action name="codeImg" class="action.CodeImgAction" method="codeImg">
+            <result name="success">regist.jsp</result>
+        </action>
+    </package>
+</struts>
