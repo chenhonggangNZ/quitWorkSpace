@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="bean.Employee" table="employee" schema="hibernate01">
+        <id name="eid">
+            <column name="eid" sql-type="int(11)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="ename">
+            <column name="ename" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="department">
+            <column name="department" sql-type="varchar(60)" length="60" not-null="true"/>
+        </property>
+        <property name="hiredate">
+            <column name="hiredate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="telnumber">
+            <column name="telnumber" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="age">
+            <column name="age" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

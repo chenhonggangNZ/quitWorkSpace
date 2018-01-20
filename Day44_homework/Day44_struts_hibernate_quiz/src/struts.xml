@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="day44" extends="struts-default" namespace="/">
+        <interceptors>
+            <interceptor name="all" class="action.AllInterceptor"/>
+            <interceptor-stack name="all">
+                <interceptor-ref name="all"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="all"/>
+        <default-action-ref name="employees"/>
+        <global-results>
+            <result name="error">login.action</result>
+            <result name="input">login.action</result>
+        </global-results>
+        <global-allowed-methods>login</global-allowed-methods>
+        <action name="login" class="action.LoginAction" method="login">
+            <result name="input">login.jsp</result>
+            <result name="error">login.jsp</result>
+            <result name="success" type="chain">employees</result>
+        </action>
+        <action name="add" class="action.EmployeeAction" method="add">
+            <result name="success" type="chain">employees</result>
+        </action>
+        <action name="employee" class="action.EmployeeAction" method="emp">
+            <result name="success">edit.jsp</result>
+        </action>
+        <action name="employees" class="action.EmployeeAction" method="employeess">
+            <result name="success">index.jsp</result>
+        </action>
+    </package>
+</struts>
